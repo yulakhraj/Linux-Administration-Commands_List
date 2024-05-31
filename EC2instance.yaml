@@ -1,0 +1,9 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "Simple CloudFormation Template to create an EC2 instance and an S3 bucket"
+Resources:
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-0f58b397bc5c1f2e8
+      KeyName: aws-login

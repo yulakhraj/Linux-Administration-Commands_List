@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "Simple CloudFormation Template to create an EC2 instance and an S3 bucket"
+Resources:
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-0f58b397bc5c1f2e8     # Replace with your desired AMI ID
+      KeyName: aws-login                 # Replace with your existing key pair name
+      SecurityGroupIds:
+      - sg-02f33728dec1a7353             # Replace with your existing security group ID
+
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: yulakh-s3-bucket       # Replace with your desired bucket name
+
+

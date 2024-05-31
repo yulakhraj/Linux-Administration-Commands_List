@@ -1,0 +1,36 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "Simple CloudFormation Template to create an EC2 instance and an S3 bucket"
+
+Parameters:
+  EC2AMIID:
+    Type: String
+    Default: ami-0f58b397bc5c1f2e8
+    AllowedValues:
+    - ami-0f58b397bc5c1f2e8
+    - ami-05a5bb48beb785bf1
+    - ami-0cc9838aa7ab1dce7
+    Description: Choose the AMI Id
+  InstanceTypeParameter:
+    Type: String
+    Default: t2.micro
+    AllowedValues:
+    - t2.micro
+    - t2.nano
+    - t2.small
+    Description: Choose the Instance types
+  S3BucketName:
+    Type: String
+
+Resources:
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: !Ref InstanceTypeParameter
+      ImageId: !Ref EC2AMIID
+      KeyName: aws-login
+
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref S3BucketName
+
