@@ -343,5 +343,5 @@
 
 ---
 
-This is a broad list of commands and practices. Let me know if you want examples explained in detail or additional advanced topics included!
+This is a broad list of commands and practices.
 
